@@ -1,0 +1,20 @@
+<h1>Babies</h1>
+<%=link_to :Registros, breastfeedings_path%>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Veces que ha tomado</th>
+  </tr>
+
+
+<%@babies.each do |baby|%> 
+
+  <tr>
+    <td><%=link_to baby.nombre, babies_show_path(baby.id) %></td>
+    <td><%= baby.breastfeeding.count%></td>
+  </tr>
+<%end%>
+
+
+</table>
